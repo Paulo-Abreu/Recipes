@@ -2,13 +2,13 @@
 #
 # Table name: ingredients
 #
-#  id            :integer          not null, primary key
+#  id            :bigint           not null, primary key
 #  name          :string
 #  quantity      :float
 #  unity_mesaure :float
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-#  recipe_id     :integer          not null
+#  recipe_id     :bigint           not null
 #
 # Indexes
 #
@@ -16,7 +16,7 @@
 #
 # Foreign Keys
 #
-#  recipe_id  (recipe_id => recipes.id)
+#  fk_rails_...  (recipe_id => recipes.id)
 #
 
 one:

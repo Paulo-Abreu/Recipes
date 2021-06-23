@@ -2,7 +2,7 @@
 #
 # Table name: users
 #
-#  id                     :integer          not null, primary key
+#  id                     :bigint           not null, primary key
 #  birthdate              :date
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string
@@ -22,7 +22,6 @@
 #
 # Indexes
 #
-#  index_users_on_confirmation_token    ("confirmation_token") UNIQUE
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
