@@ -5,7 +5,7 @@
 #  id            :bigint           not null, primary key
 #  name          :string
 #  quantity      :float
-#  unity_mesaure :float
+#  unity_measure :float
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  recipe_id     :bigint           not null

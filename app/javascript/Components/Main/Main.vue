@@ -8,14 +8,20 @@
 <script>
 import Home from '../Home/Home.vue';
 import Sidebar from '../Sidebar/Sidebar.vue';
+import List from '../List/List.vue';
+import CreateRecipe from '../List/RecipesForm.vue';
+import Timeline from '../Timeline/Timeline.vue';
 const componentDicionary = {
+  list: List,
   home: Home,
-  sidebar: Sidebar
+  sidebar: Sidebar,
+  create_recipe: CreateRecipe,
+  timeline: Timeline,
 };
 export default {
   name: 'Main',
   components: {
-    Home, Sidebar,
+    Home, Sidebar, List, CreateRecipe,Timeline,
   },
   props: {
     componentName: {
@@ -28,8 +34,9 @@ export default {
   },
   computed: {
     loadComponent() {
+      console.log(this.componentName)
       return componentDicionary[this.componentName]
     }
-  },
+  }
 }
 </script>

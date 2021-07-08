@@ -1,0 +1,243 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    margin: auto;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+   
+  }
+ 
+html {
+  font-family: "Montserrat";
+}
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+}
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline ul {
+  list-style: none;
+}
+.timeline ul li {
+  padding: 20px;
+  background-color: #e68633;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.timeline ul li:last-child {
+  margin-bottom: 0;
+}
+.timeline-content h1 {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+.timeline-content p {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+}
+.timeline-content .date {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 768px) {
+  .timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: gray;
+  }
+  .timeline ul li {
+    width: 50%;
+    position: relative;
+    margin-bottom: 50px;
+  }
+  .timeline ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+    border-radius: 20px 0px 20px 20px;
+  }
+  .timeline ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+    border-radius: 0px 20px 20px 20px;
+  }
+  .timeline ul li::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 0px;
+  }
+  .timeline ul li:nth-child(odd)::before {
+    transform: translate(50%, -50%);
+    right: -30px;
+  }
+  .timeline ul li:nth-child(even)::before {
+    transform: translate(-50%, -50%);
+    left: -30px;
+  }
+  .timeline-content .date {
+    position: absolute;
+    top: -30px;
+    color: black;
+  }
+  .timeline ul li:hover::before {
+    background-color: rgb(255, 111, 0);
+  }
+  .timeline ul li:hover{
+    cursor: pointer;
+  }
+}
+
+
+ input[type=text], input[type=number], input[type=password], input[type=email], select {
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+ }
+ 
+ input[type=submit] {
+   text-align: center;
+   background-color: #4CAF50;
+   color: white;
+   padding: 14px 20px;
+   border: 2px;
+   border-radius: 4px;
+   cursor: pointer;
+ }
+ 
+
+ 
+ .signup-container {
+   position: relative;
+   background-color: #ffffff;
+   border: 1px solid #999999;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   border-radius: 6px;
+   outline: none;
+   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+   background-clip: padding-box;
+   width: 70%;
+   margin: auto;
+   padding: 40px;
+   margin-top: 40px;
+ }
+ 
+ .signup-container .signup-form input[type="text"], .signup-container .signup-form input[type="password"],
+ .signup-container .signup-form input[type="number"], .signup-container .signup-form input[type="email"] {
+     border-radius: 3px;
+     border: 2px;
+     color: #333333;
+     font-size: 16px;
+     height: 16px;
+     margin-bottom: 5px;
+     padding: 13px 12px;
+     width: 100%;
+ }
+ 
+ .signup-container .signup-form .form-control {
+     border-radius: 3px;
+     background-color: rgba(0, 0, 0, 0.09);
+     box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.09) inset;
+     color: #FFFFFF;
+   }
+ 
+   .signup-container .signup-form .btn-register {
+     background-color: #00BBFF;
+     border-color: black;
+     border-width: 2px;
+     color: #FFFFFF;
+     display: block;
+     margin: 0 auto;
+     padding: 15px 50px;
+     text-transform: uppercase;
+     width: 80%;
+     margin-top: 20px;
+ }
+ 
+
+ .btn {
+   position: relative;
+   padding: 12px 30px;
+   margin: .3125rem 1px;
+   font-size: .75rem;
+   font-weight: 400;
+   line-height: 1.428571;
+   text-decoration: none;
+   text-transform: uppercase;
+   letter-spacing: 0;
+   cursor: pointer;
+   background-color: transparent;
+   border: 2px;
+   border-radius: .2rem;
+   transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1);
+   will-change: box-shadow,transform;
+ }
+
+ .bmd-form-group:not(.has-success):not(.has-danger) [class^=bmd-label].bmd-label-floating {
+     color: rgb(17, 236, 200);
+ }
+ 
+ .bmd-form-group [class^=bmd-label].bmd-label-floating {
+     will-change: left,top,contents;
+     margin: 0;
+     line-height: 1.4;
+     font-weight: 400;
+ }
+ 
+ .bmd-form-group [class*=" bmd-label"], .bmd-form-group [class^=bmd-label] {
+     position: absolute;
+     pointer-events: none;
+     transition: all .3s ease;
+ }
+
+ .field{
+   text-align: center;
+   margin: auto;
+ }
+
+ .login-form{
+    width: 50%;
+    border-width: 1px;
+    border-radius: 10px ;
+    margin: auto;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #a4e9a7;
+  }
+
+
+ 
