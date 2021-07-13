@@ -11,17 +11,21 @@ import Sidebar from '../Sidebar/Sidebar.vue';
 import List from '../List/List.vue';
 import CreateRecipe from '../List/RecipesForm.vue';
 import Timeline from '../Timeline/Timeline.vue';
+import Users from '../Users/Users.vue';
+import Userlist from '../Users/UserList.vue';
 const componentDicionary = {
   list: List,
   home: Home,
   sidebar: Sidebar,
   create_recipe: CreateRecipe,
   timeline: Timeline,
+  users: Users,
+  userlist: Userlist,
 };
 export default {
   name: 'Main',
   components: {
-    Home, Sidebar, List, CreateRecipe,Timeline,
+    Home, Sidebar, List, CreateRecipe,Timeline,Users,Userlist,
   },
   props: {
     componentName: {

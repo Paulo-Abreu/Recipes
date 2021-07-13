@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   root to: "recipes#index"
   resources :recipes
   resources :timeline
+  resources :userlist
+  resources :users
+  get '/users/:id/recipes', to: 'users#show'
+
   namespace :api do
     namespace :v1 do
       resources :recipes
+      resources :userlist
     end
   end
 end
