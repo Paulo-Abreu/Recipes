@@ -9,12 +9,16 @@ Rails.application.routes.draw do
   resources :timeline
   resources :userlist
   resources :users
+  resources :follows
+  resources :comments
   get '/users/:id/recipes', to: 'users#show'
 
   namespace :api do
     namespace :v1 do
       resources :recipes
       resources :userlist
+      resources :follows
+      resources :comments
     end
   end
 end

@@ -2,7 +2,8 @@ class RecipesController < ApplicationController
     before_action :view_recipe, only: %i[  ]
 
     def index
-        @recipes = current_user.recipes
+        @recipes = Recipe.where(user_id: current_user.follows.pluck(:following_id))
+        @recipes = @recipes.map { |r| ActiveModel::SerializableResource.new(r) }        
         @props = {
             component_name: 'list',
             component_data: @recipes
