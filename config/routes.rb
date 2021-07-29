@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :users
   resources :follows
   resources :comments
+  resources :images
+  post '/images/:id', to: 'images#create'
   get '/users/:id/recipes', to: 'users#show'
 
   namespace :api do
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
       resources :userlist
       resources :follows
       resources :comments
+      resources :likes
     end
   end
 end

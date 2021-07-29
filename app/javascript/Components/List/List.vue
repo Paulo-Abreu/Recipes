@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="row">
+        <div>
             <div class="col-md-12">
                 <div class="card-content">
                     <div class="header-content">
                         <div class="media-left">
-                            <h1 class="card-title mt-0">Receitas Usuarios Seguidos</h1>
+                            <h3 class="card-title">Receitas de Usuarios Seguidos</h3>
                         </div>
                     </div>
                     <div class="card-body">
@@ -14,13 +14,7 @@
                         <div>
                             <div>
                                 <div class="card" v-for="recipe in recipes" :key="recipe.name">
-                                    <h3>{{recipe.name}}</h3>
-                                    <h3>Receita do User:{{recipe.user_id}}</h3>
-                                    <button class="button is-light comment-btn" @click="comment_recipe(recipe.id)"><i class="far fa-comment"></i></button>
-                                    <input type="text" class="input" v-model="comment" placeholder="Comment...">
-                                    <div class="card" v-for="comment in comments" :key="comment.name">
-                                        <p>{{comment.content}}</p>
-                                    </div>
+                                    <RecipeWrapper :recipe="recipe" />
                                 </div>
                                 <br>
                             </div>
@@ -29,16 +23,50 @@
                 </div>
             </div>
         </div>
+        <hr>
+        <div>
+            <div class="col-md-12">
+                <div class="card-content">
+                    <div class="header-content">
+                        <div class="media-left">
+                            <h3 class="card-title">Minhas receitas</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                    </div>
+                    <div class="recipes">
+                        <div>
+                            <div>
+                                <div class="card" v-for="recipe in myRecipes" :key="recipe.name">
+                                    <br>
+                                    <h3 class="title">{{recipe.name}}</h3>
+                                    <button class="button is-light comment-btn" @click="editRecipe(recipe.id)">Adicionar Imagem</button>
+                                    <br>
+                                    <br>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button  class="button is-info" id="button" @click="createRecipe()">Criar Receita!</button><br><br>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+import RecipeWrapper from './RecipeWrapper.vue';
     export default {
         name: 'List',
+        components:{
+            RecipeWrapper,
+        },
         data(){
             return{
                 recipes: [],
+                myRecipes: [],
                 comments: [],
                 comment:''
             }
@@ -49,11 +77,15 @@ import axios from 'axios';
             }
         },
         mounted() {
-            console.log("receitas usuario",this.data)
-            this.recipes = this.data
-            this.comments = this.recipes.comments 
+            this.recipes = this.data[0]
+            this.myRecipes = this.data[1]
+            console.log("receitas usuario",this.recipes)
         },
         methods: {
+            commentInput(item){
+                this.comment = item
+                console.log("aaaaaaa", this.comment)
+            },
             createRecipe: function (event) {
                 window.location = '/recipes/new'
             },
@@ -63,17 +95,15 @@ import axios from 'axios';
             goToTimeline () {
                 window.location = '/timeline' 
             },
-            comment_recipe(id){
-                console.log(this.comment)
-                  axios.post('/api/v1/comments', {recipe_id: id, comment: this.comment})
-                .then(response => {window.location = '/', console.log(response) })  
-            }
         },
     }
-</script>
+</script>   
 <style>
 .card-content{
     text-align: center;
     margin-left: 500px;
+}
+.recipes .input{
+    width: 1000px;
 }
 </style>

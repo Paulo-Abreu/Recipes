@@ -6,7 +6,8 @@
                     <div class="timeline-content">
                         <h3 class="date">{{recipe.created_at}}</h3>
                         <h1>{{recipe.name}}</h1>
-                        <p>{{recipe.description}}</p>
+                        <p class="description">{{recipe.description}}</p>
+                        <img :src="recipe.image" :alt="recipe.description">
                     </div>
                 </li>
             </ul>    
@@ -38,5 +39,11 @@ export default {
 <style >
 .timeline-content{
     margin-top: 10px;
+}
+.timeline-content img{
+    border-radius: 20px;
+}
+.timeline-content .description{
+    margin-bottom: 10px;
 }
 </style>

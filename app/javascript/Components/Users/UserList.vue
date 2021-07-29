@@ -60,7 +60,4 @@
         },
     }
 </script>
-<style>
 
-
-</style>

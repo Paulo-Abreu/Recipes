@@ -13,6 +13,7 @@ import CreateRecipe from '../List/RecipesForm.vue';
 import Timeline from '../Timeline/Timeline.vue';
 import Users from '../Users/Users.vue';
 import Userlist from '../Users/UserList.vue';
+import UpdateRecipe from '../List/UpdateRecipe.vue';
 const componentDicionary = {
   list: List,
   home: Home,
@@ -21,11 +22,12 @@ const componentDicionary = {
   timeline: Timeline,
   users: Users,
   userlist: Userlist,
+  update_recipe: UpdateRecipe
 };
 export default {
   name: 'Main',
   components: {
-    Home, Sidebar, List, CreateRecipe,Timeline,Users,Userlist,
+    Home, Sidebar, List, CreateRecipe,Timeline,Users,Userlist,UpdateRecipe
   },
   props: {
     componentName: {
