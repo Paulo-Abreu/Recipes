@@ -21,7 +21,10 @@
 #
 class RecipeSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
-  attributes :id, :description, :name, :likes
+  attributes :id, :description, :name,  :likes_count
   has_many :comments
-  
+
+  def likes_count
+    object.likes.count
+  end
 end
