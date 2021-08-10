@@ -6,7 +6,8 @@ module Api::V1
             if already_liked?             
                 render json: {message: 'NÃO É POSSIVEL DAR MAIS DE UM LIKE'} , status: 201
             else
-                @recipe.likes.create(user: current_user)
+                liked = @recipe.likes.create(user: current_user)
+                NotificationsBroadcastJob.perform_later(liked)
             end
 
             

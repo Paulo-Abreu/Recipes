@@ -3,7 +3,7 @@
         <div class="card">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card-content">
+                    <div class="card-content user-card">
                         <div class="header-content">
                             <div class="media-left">
                                 <h1 class="card-title">Usuarios</h1>

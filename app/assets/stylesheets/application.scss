@@ -136,9 +136,7 @@ html {
   margin-bottom: 10px;
   letter-spacing: 2px;
 }
-.user-card{
-    cursor: pointer;
-}
+
 .id{
     margin-left: 1000px;
 }
@@ -173,9 +171,53 @@ html {
    border-radius: 4px;
    cursor: pointer;
  }
- 
+ .user-card{
+   margin-right: 100px;
+ }
+.user-card{
+  margin: auto;
+  margin-top: 100px;
+}
+.add-recipe{
+  margin: 15px 1350px 0 0;
+}
+.recipe-follow{
+  margin: 20px 100px 50px 0;
+}
+.recipe-follow-content .title{
+  padding-top: 15px;
+}
 
- 
+.recipe-follow-content .input{
+  width: 400px;
+  margin: 15px 0 25px 0;
+}
+.recipe-follow-content .likes{
+  margin-left: 500px;
+}
+.recipe-follow-title{
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin:0 900px 50px 0;
+}
+.card .form{
+  margin: 15px 0 15px 15px;
+}
+.card .form .add-ingredient{
+  margin: 10px 15px 0 15px;
+
+}
+.card .image{
+  margin: 50px;
+  padding: 50px;
+}
+.card .form .input{
+  margin-left: 30px;
+  width: 400px;
+}
+.recipe-card-form{
+  margin: 100px 0 0 300px;
+}
  .signup-container {
    position: relative;
    background-color: #ffffff;

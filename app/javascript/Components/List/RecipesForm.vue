@@ -1,36 +1,38 @@
 <template>
     <div>
+        <h1>Formulario de Criar Receita</h1>
         <form form enctype="multipart/form-data">
-            <table  class="card" id="create_form">
-                <tr class="card-content">
-                    <th class="card-title" id="title" colspan="2">Formulario de Criar Receita</th>
-                </tr>
+            <table class="card recipe-card-form">
+                <div class="form">
+                    <tr class="card-content">
+                        <td><label class="label"><h3>⠀⠀Name⠀⠀</h3></label></td>
+                        <td><input class="input is-info" name="name" type="text" placeholder="Name" v-model="newObject.name"></td>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr class="card-content">
+                        <td><label class="label"><h3>Description</h3></label></td>
+                        <td><input class="input is-info" type="textarea" placeholder="Details" v-model="newObject.description"></td>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr class="card-content">
+                        <td><label class="label"><h3>Ingredients</h3></label></td>
+                        <td><input class="input is-info" type="text" placeholder="Name..." v-model="newObject.newIngredient.name"></td><br>
+                        <td><input class="input is-info" type="text" placeholder="Quantity..." v-model="newObject.newIngredient.quantity"></td>
+                        <td><input class="input is-info" type="text" placeholder="Unity measure..." v-model="newObject.newIngredient.unity_measure"></td>
+                        <td><button class="button is-info add-ingredient" id="button" @click="addNewIngredient()"><i class="fas fa-plus"></i></button><br><br></td>
+                    </tr>
 
-                <tr class="card-content">
-                    <td><label class="label">Name</label></td>
-                    <td><input class="input is-info" name="name" type="text" placeholder="Name" v-model="newObject.name"></td>
-                </tr>
-
-                <tr class="card-content">
-                    <td><label class="label">Description</label></td>
-                    <td><input class="input is-info" type="textarea" placeholder="Details" v-model="newObject.description"></td>
-                </tr>
-                <br>
-                <tr class="card-content">
-                    <td><label class="label">Ingredients</label></td>
-                    <td><input class="input is-info" type="text" v-model="newObject.newIngredient.name"></td>
-                    <td><input class="input is-info" type="text" v-model="newObject.newIngredient.quantity"></td>
-                    <td><input class="input is-info" type="text" v-model="newObject.newIngredient.unity_measure"></td>
-                    <button class="button is-info" id="button" @click="addNewIngredient()"><i class="fas fa-plus"></i></button><br><br>
-                </tr>
-
-                <ul>
-                    <li v-for="ingredient in newObject.ingredientsInput" :key="ingredient.name">{{ingredient.name}}, {{ingredient.quantity}}, {{ingredient.unity_measure}} </li>    
-                </ul>        
-
-                <button  class="button is-info" id="button" @click="submitForm()">Criar Receita!</button><br><br>
-                <button  class="button is-info" id="button" @click="showList">Back</button>
-            </table><br>
+                    <ul>
+                        <li v-for="ingredient in newObject.ingredientsInput" :key="ingredient.name">{{ingredient.name}}, {{ingredient.quantity}}, {{ingredient.unity_measure}} </li>    
+                    </ul>        
+                    <div class="footer-form">
+                        <button  class="button is-info add-recipe" id="button" @click="submitForm()">Criar Receita!</button><br><br>
+                        <button  class="button is-info add-recipe" id="button" @click="showList">Back</button>
+                    </div>
+                </div>
+            </table>
         </form>
     </div>
 
@@ -94,15 +96,5 @@ export default{
 </script>
 
 <style>
-.content table{
-    width: 800px;
-}
-#title{
-    background: rgb(13, 0, 255);
-    color: white;
-}
-.card{
-    margin: auto;
-    margin-top: 100px;
-}
+
 </style>

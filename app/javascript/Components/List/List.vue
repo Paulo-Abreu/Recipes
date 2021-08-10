@@ -5,7 +5,7 @@
                 <div class="card-content">
                     <div class="header-content">
                         <div class="media-left">
-                            <h3 class="card-title">Receitas de Usuarios Seguidos</h3>
+                            <h3 class="recipe-follow-title">Receitas de Usuarios que sigo</h3>
                         </div>
                     </div>
                     <div class="card-body">
@@ -13,7 +13,7 @@
                     <div>
                         <div>
                             <div>
-                                <div class="card" v-for="recipe in recipes" :key="recipe.name">
+                                <div class="card recipe-follow" v-for="recipe in recipes" :key="recipe.name">
                                     <RecipeWrapper :recipe="recipe" />
                                 </div>
                                 <br>

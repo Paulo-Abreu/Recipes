@@ -75,22 +75,5 @@ export default{
 </script>
 
 <style>
-.content table{
-    width: 800px;
-}
-#title{
-    background: rgb(13, 0, 255);
-    color: white;
-}
-.card{
-    margin: auto;
-    margin-top: 100px;
-}
-.card .image{
-    margin: 50px;
-    padding: 50px;
-}
-.card input{
-    margin-left: 30px;
-}
+
 </style>

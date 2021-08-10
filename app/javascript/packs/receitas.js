@@ -1,6 +1,10 @@
 import Main from '../Components/Main/Main.vue';
 import 'bulma/css/bulma.css';
 import Vue from 'vue';
+import ActionCableVue from 'actioncable-vue';
+import Notifications from 'vue-notification';
+ 
+
 const parseData = (prop) => {
     try {
       return JSON.parse(prop);
@@ -8,6 +12,16 @@ const parseData = (prop) => {
       return prop;
     }
   };
+
+  Vue.use(Notifications)
+
+  Vue.use(ActionCableVue, {
+    debug: true,
+    debugLevel: 'error',
+    connectionUrl: 'ws://localhost:3000/cable', // or function which returns a string with your JWT appended to your server URL as a query parameter
+    connectImmediately: true,
+  });
+  
 const init = () => {
   const element = document.getElementById('receitas');
   if (element !== null) {

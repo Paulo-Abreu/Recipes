@@ -9,15 +9,18 @@
 
         <li class="menu-item">
         <a @click="goToTimeline" class="menu-link">
-            <p class="title is-2">Timeline</p>
+            <p class="title is-2"><i class="fas fa-project-diagram"></i> Timeline</p>
             </a>
         </li>
 
-
         <li class="menu-item">
         <a @click="goToUsers" class="menu-link">
-            <p class="title is-2">Users</p>
+            <p class="title is-2"><i class="fas fa-user"></i> Users</p>
             </a>
+        </li>
+        
+        <li class="menu-item">
+            <notifications group="like" />
         </li>
     </ul>
 </template>
@@ -36,7 +39,27 @@ export default {
         goToUsers(){
             window.location = '/users'
         }
+    },
+    channels: {
+        NotificationsChannel: {
+            connected() {
+              console.log('connected');
+            },
+            rejected() {},
+            received(data){
+                console.log('ssssss',data)
+               this.$notify({
+                    group: 'like',
+                    text: 'A receita: ' + data.data +' recebeu um like!'
+                }); 
+            },
+            disconnected() {}
+        }
+  },
+    mounted(){
+        this.$cable.subscribe({ channel: 'NotificationsChannel'});
     }
+
 }
 </script>
 <style>

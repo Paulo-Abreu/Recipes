@@ -4,6 +4,7 @@
             <ul>
                 <li v-for="recipe in allRecipes" :key="recipe.name" >
                     <div class="timeline-content">
+                        <p>{{recipe.date}}</p>
                         <h3 class="date">{{recipe.created_at}}</h3>
                         <h1>{{recipe.name}}</h1>
                         <p class="description">{{recipe.description}}</p>
@@ -32,7 +33,7 @@ export default {
     },
     mounted(){
         console.log("data", this.data)
-        this.allRecipes = this.data
+        this.allRecipes = this.data[1]
     }
 }
 </script>
